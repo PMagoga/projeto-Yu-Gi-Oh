@@ -1,146 +1,259 @@
 body {
-    cursor: url("../assets/cursor/yugicursor.png"), default;
+  cursor: url("../assets/cursor/yugicursor.png"), default;
 }
 
 button,
 a,
 img:hover,
 a:hover {
-    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+  cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
 }
 
 .bg-video {
-    position: absolute;
-    z-index: -2;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .bg-video .video {
-    height: 100vh;
+  /* Ajuste para garantir que o vídeo cubra a tela */
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
 }
 
 .bg-video::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.8) 50%,
-        rgba(0, 0, 0, 1) 100%
-    )
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .container {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    height: 100vh;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  /* Ajuste de altura para permitir que o conteúdo se ajuste, mas mantendo a tela cheia */
+  height: 100vh;
+  width: 100%;
 }
 
 .container__left {
-    width: 35%;
-    min-width: 18.75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  /* Uso de flex para se adaptar, mas com um mínimo */
+  flex: 1;
+  min-width: 18rem; /* Mínimo para o painel de info */
+  max-width: 35%; /* Máximo em telas grandes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
 }
 
 .container__right {
-    width: 65%;
+  /* Ocupa o restante do espaço */
+  flex: 2;
+  padding: 0.5rem;
 }
 
 .score_box {
-    background-color: #fff;
-    padding: 1.875rem;
+  background-color: #fff;
+  padding: 1.5rem; /* Ajustado */
+  font-size: 0.75rem; /* Ajustado */
 }
 
 .frame {
-    border: 0.188rem solid #000;
-    border-radius: 0.313rem;
+  border: 0.188rem solid #000;
+  border-radius: 0.313rem;
 }
 
 .card_details {
-    background-color: #fff;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 6rem;
-    width: 100%;
+  background-color: #fff;
+  padding: 0.5rem; /* Ajustado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  width: 90%; /* Ajustado para se adaptar ao container */
 }
 
 #card-name {
-    font-size: 0.8rem;
+  font-size: 0.7rem; /* Ajustado */
 }
 
 #card-type {
-    font-size: 1rem;
+  font-size: 0.8rem; /* Ajustado */
 }
 
 .card-box__container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.3rem;
+  height: 100%; /* Uso de 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem;
 }
 
 .card-versus {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0.1rem;
-    height: 18.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.1rem;
+  height: auto; /* Permitir ajuste */
+  flex-grow: 1; /* Ocupa o espaço central */
+  min-height: 18.75rem;
 }
 
 .versus-top,
 .versus-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem; /* Ajustado */
 }
 
 .versus-bottom {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 #next-duel {
-    display: none;
+  display: none;
+  font-size: 0.8rem; /* Ajustado */
+  min-width: 100px; /* Ajustado */
+  height: 50px; /* Ajustado */
 }
 
 .card-box {
-    height: 13rem;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  height: 10rem; /* Ajustado */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem; /* Adicionado padding */
 }
 
 .card-infield {
-    height: 11.2rem;
-    width: 8rem;
-    border-radius: 0.9rem;
+  /* Uso de porcentagem/flex para as cartas em campo */
+  height: 100%;
+  width: 45%;
+  max-width: 125px; /* Limite de tamanho */
+  border-radius: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.card-infield img {
+  /* Ajuste para que a imagem preencha o card-infield */
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .card {
-    transition: transform 0.2s;
+  transition: transform 0.2s;
+  max-height: 100%; /* Ajuste para caber no card-box */
+  max-width: 100%;
 }
 
 .card:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* ------------------------------------------- */
+/* MEDIA QUERY para TELAS MENORES (ex: Celulares) */
+/* ------------------------------------------- */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column; /* Empilha os elementos na vertical */
+    height: auto; /* Permite que o container se ajuste ao conteúdo */
+    min-height: 100vh;
+  }
+
+  .container__left {
+    order: 2; /* Move a área de detalhes da carta para baixo */
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .container__right {
+    order: 1; /* Move a área de jogo para cima */
+    width: 100%;
+    height: auto;
+    min-height: 50vh; /* Garante um tamanho mínimo para a área de jogo */
+  }
+
+  .card-box__container {
+    height: 100%;
+    min-height: 50vh;
+  }
+
+  .score_box {
+    order: 1;
+    width: 90%;
+  }
+
+  .menu_avatar {
+    order: 2;
+    width: 50%;
+    display: none; /* Opcional: esconder o avatar em telas pequenas */
+  }
+
+  .card_details {
+    order: 3;
+    width: 90%;
+    height: 4rem; /* Diminui a altura */
+  }
+
+  .card-versus {
+    padding-top: 0.5rem;
+    min-height: 15rem; /* Diminui a altura do versus */
+  }
+
+  .versus-top img[height="100px"] {
+    height: 70px; /* Diminui o ícone do milênio */
+  }
+
+  .card-box {
+    height: 7rem; /* Diminui a altura do deck */
+  }
+
+  .card {
+    height: 80px; /* Tamanho fixo menor para as cartas */
+    width: 60px;
+  }
+
+  .card:hover {
+    transform: none; /* Desativa o hover para evitar problemas de toque */
+  }
+
+  .card-infield {
+    height: 100px; /* Altura menor para a carta em campo */
+    width: 70px;
+  }
+
+  .card-infield img {
+    height: 100px; /* Tamanho da imagem da carta em campo */
+    width: 70px;
+  }
 }
